@@ -1,49 +1,46 @@
 class Blog
 
-	def initialize
-		@posts = []
-	end
+  def initialize
+    @posts = []
+  end
 
-	def add_post(post)
-		@posts.push(post)
-	end
+  def add_post(post)
+    @posts.push(post)
+  end
 
-	def add_sponsored(post)
-		@posts.push
-		
-	end
+  def add_sponsored(post)
+    @posts.push	
+  end
 
-	def publish_front_page
-		@posts.sort! { |x, y| y.date <=> x.date }
-		
-		@posts.each do |post|
-  		if post.sponsored == false
-  			puts post.title
-	  		puts post.date
-	  		puts "**************"
-	  		puts post.text
-	  		puts "----------------"
-	  		
-  		else
-  			puts "****** #{post.title} ******"
-	  		puts post.date
-	  		puts "**************"
-	  		puts post.text
-	  		puts "----------------"
-  		end
-  	end	
-	end
+  def publish_front_page
+    @posts.sort! { |x, y| y.date <=> x.date }
+    @posts.each do |post|
+      if post.sponsored == false
+        puts post.title
+	puts post.date
+	puts "**************"
+	puts post.text
+	puts "----------------"
+      else
+        puts "****** #{post.title} ******"
+	puts post.date
+	puts "**************"
+	puts post.text
+	puts "----------------"
+      end
+    end	
+  end
 end
 
 class Post
-attr_accessor :date, :title, :text, :sponsored
+  attr_accessor :date, :title, :text, :sponsored
 
-	def initialize (title, date, text, sponsored)
-		@title = title
-		@date = date
-		@text = text
-		@sponsored = sponsored
-	end
+  def initialize (title, date, text, sponsored)
+    @title = title
+    @date = date
+    @text = text
+    @sponsored = sponsored
+  end
 end
 
 blog = Blog.new()
