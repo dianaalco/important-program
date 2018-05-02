@@ -1,5 +1,5 @@
 class Txtbnb
-	attr_reader:name, :city, :price, :capacity
+	attr_reader :name, :city, :price, :capacity
 	def initialize (name, city, capacity, price)
 	@name = name
 	@city = city
